@@ -1,0 +1,150 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bob Esponja e o Siri Cascudo</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(#00c3ff,#0077ff);
+    overflow-x:hidden;
+}
+
+/* bolhas animadas */
+.bubble{
+    position:absolute;
+    bottom:-100px;
+    width:20px;
+    height:20px;
+    background:rgba(255,255,255,0.5);
+    border-radius:50%;
+    animation: subir 10s infinite;
+}
+@keyframes subir{
+    from{transform:translateY(0);}
+    to{transform:translateY(-120vh);}
+}
+
+/* titulo */
+header{
+    text-align:center;
+    padding:40px;
+    color:white;
+    text-shadow:3px 3px 0px #000;
+}
+header h1{
+    font-size:60px;
+}
+
+/* bob esponja */
+.bob{
+    width:200px;
+    height:200px;
+    background:#ffd90f;
+    border:6px solid #000;
+    margin:40px auto;
+    position:relative;
+    border-radius:10px;
+}
+.eye{
+    width:50px;
+    height:50px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
+    top:40px;
+    border:4px solid #000;
+}
+.eye.left{ left:40px;}
+.eye.right{ right:40px;}
+.pupil{
+    width:20px;
+    height:20px;
+    background:#00aaff;
+    border-radius:50%;
+    margin:12px;
+}
+.mouth{
+    width:120px;
+    height:60px;
+    border-bottom:6px solid #000;
+    border-radius:0 0 80px 80px;
+    position:absolute;
+    bottom:30px;
+    left:40px;
+}
+
+/* siri cascudo */
+.restaurant{
+    width:350px;
+    background:#b5651d;
+    margin:50px auto;
+    padding:20px;
+    border-radius:20px;
+    border:6px solid #000;
+    text-align:center;
+    color:white;
+}
+.restaurant h2{
+    margin:0;
+    font-size:30px;
+}
+.burger{
+    font-size:50px;
+    animation: girar 3s infinite linear;
+}
+@keyframes girar{
+    from{transform:rotate(0);}
+    to{transform:rotate(360deg);}
+}
+
+/* rodapé */
+footer{
+    text-align:center;
+    padding:30px;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🍍 Bob Esponja & Siri Cascudo 🍔</h1>
+    <p>Bem-vindo à Fenda do Biquíni</p>
+</header>
+
+<div class="bob">
+    <div class="eye left"><div class="pupil"></div></div>
+    <div class="eye right"><div class="pupil"></div></div>
+    <div class="mouth"></div>
+</div>
+
+<div class="restaurant">
+    <h2>Siri Cascudo</h2>
+    <p>Lar do famoso Hambúrguer de Siri</p>
+    <div class="burger">🍔</div>
+</div>
+
+<footer>
+    <p>Feito no VS Code por um fã do Bob Esponja 🌊</p>
+</footer>
+
+<!-- bolhas -->
+<script>
+for(let i=0;i<25;i++){
+    let b=document.createElement("div");
+    b.classList.add("bubble");
+    b.style.left=Math.random()*100+"%";
+    b.style.animationDuration=(5+Math.random()*5)+"s";
+    document.body.appendChild(b);
+}
+</script>
+
+</body>
+</html>
+```
